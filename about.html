@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Toko Sayuran Segar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #2E7D32;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #ffeb3b;
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #F1F8E9;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .content h2 {
+            color: #4CAF50;
+            font-size: 2rem;
+            animation: slideInFromLeft 1s ease-out;
+        }
+        .content h3 {
+            color: #2E7D32;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: slideInFromLeft 1.2s ease-out;
+        }
+        .content p, .content ul {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        .content .highlight {
+            font-weight: bold;
+            color: #2E7D32;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+        footer:hover {
+            background-color: #388E3C;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tentang Kami</h1>
+    </header>
+    <nav>
+        <a href="homepage.html">Beranda</a>
+        <a href="produk.html">Produk</a>
+        <a href="about.html">Tentang Kami</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+    <section class="content">
+        <h2>Selamat Datang di Toko Sayuran Segar!</h2>
+        <p>Kami adalah toko sayuran lokal yang berdedikasi untuk menyediakan <span class="highlight">sayuran segar, sehat, dan berkualitas</span> langsung dari petani ke tangan Anda. Dengan pengalaman bertahun-tahun, kami berkomitmen untuk mendukung gaya hidup sehat bagi keluarga Anda.</p>
+
+        <h3>Misi Kami</h3>
+        <p>Misi kami adalah menjadi mitra terpercaya bagi masyarakat dalam menyediakan produk sayuran terbaik dengan harga yang terjangkau. Kami juga mendukung keberlanjutan pertanian lokal dengan bermitra langsung dengan petani setempat.</p>
+
+        <h3>Apa yang Kami Tawarkan?</h3>
+        <ul>
+            <li>Beragam jenis sayuran segar, mulai dari sayuran hijau hingga umbi-umbian.</li>
+            <li>Produk berkualitas yang dipilih langsung dari sumber terpercaya.</li>
+            <li>Layanan ramah dan cepat untuk memastikan kepuasan pelanggan.</li>
+        </ul>
+
+        <h3>Mengapa Memilih Kami?</h3>
+        <p>
+            <span class="highlight">Kesegaran:</span> Produk kami dipanen setiap hari untuk menjaga kualitas.
+            <br>
+            <span class="highlight">Keberlanjutan:</span> Kami mendukung petani lokal dengan memastikan praktik pertanian berkelanjutan.
+            <br>
+            <span class="highlight">Keterjangkauan:</span> Harga kompetitif untuk memenuhi kebutuhan keluarga Anda.
+        </p>
+
+        <p>Terima kasih telah mempercayakan kebutuhan sayuran Anda kepada kami. Kami berharap dapat menjadi bagian dari gaya hidup sehat Anda!</p>
+    </section>
+    <footer style="background-color: #4CAF50; color: white; text-align: center; padding: 20px; display: flex; align-items: center; justify-content: center;">
+        <img src="logo.jpg" alt="Sena Mart Logo" style="width: 100px; margin-right: 15px;">
+        <div>
+            <p style="margin: 0;">&copy; 2024 Sena Mart. All rights reserved.</p>
+            <p style="margin: 0;">Hubungi Kami: <a href="https://wa.me/6289634255960" style="color: white; text-decoration: none;">WhatsApp</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+ 
