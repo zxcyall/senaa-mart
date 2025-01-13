@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Sena Mart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header .logo img {
+            max-width: 50px;
+            margin-right: 15px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .container h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: right;
+        }
+        .checkout-btn {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .checkout-btn:hover {
+            background-color: #388E3C;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .cart-empty {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #888;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartTable = document.getElementById('cart-table');
+            const totalElement = document.getElementById('total');
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartTable.innerHTML = '<tr><td colspan="4" class="cart-empty">Keranjang belanja kosong</td></tr>';
+            } else {
+                cart.forEach((item, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${index + 1}</td>
+                        <td>${item.name}</td>
+                        <td>Rp ${item.price.toLocaleString()}</td>
+                        <td><button onclick="removeItem(${index})">Hapus</button></td>
+                    `;
+                    cartTable.appendChild(row);
+                    total += item.price;
+                });
+            }
+
+            totalElement.textContent = `Rp ${total.toLocaleString()}`;
+        });
+
+        function removeItem(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo Sena Mart">
+            <h1>Sena Mart</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Checkout</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Produk</th>
+                    <th>Harga</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table"></tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="total">Total</td>
+                    <td id="total"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <button class="checkout-btn" onclick="confirmCheckout()">Lanjutkan Pembayaran</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sena Mart. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function confirmCheckout() {
+            if (confirm('Apakah Anda yakin ingin melanjutkan pembayaran?')) {
+                localStorage.clear();
+                alert('Pembayaran berhasil!');
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

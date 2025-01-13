@@ -74,9 +74,46 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        li {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+li img {
+    width: 100%; /* Membuat gambar memiliki lebar 100% dari lebar kontainer */
+    height: 150px; /* Mengatur tinggi gambar agar konsisten */
+    object-fit: cover; /* Menjaga proporsi gambar agar tetap terjaga */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
     </style>
     <script>
-        // Fungsi untuk menambahkan produk ke keranjang
         function addToCart(name, price) {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.push({ name, price });
@@ -87,70 +124,83 @@
 </head>
 <body>
     <header>
-        <h1>Produk Kami</h1>
+        <h1>Syuran Hijau</h1>
     </header>
     <ul>
         <li>
-            <img src="images/tomat.jpg" alt="Tomat">
-            <h2>Tomat</h2>
-            <p>Harga: Rp 10,000</p>
-            <button onclick="addToCart('Tomat', 10000)">Tambah ke Keranjang</button>
-        </li>
-        <li>
-            <img src="images/wortel.jpg" alt="Wortel">
-            <h2>Wortel</h2>
-            <p>Harga: Rp 15,000</p>
-            <button onclick="addToCart('Wortel', 15000)">Tambah ke Keranjang</button>
-        </li>
-        <li>
-            <img src="images/bayam.jpg" alt="Bayam">
+            <img src="bayam.webp" alt="Bayam">
             <h2>Bayam</h2>
             <p>Harga: Rp 8,000</p>
             <button onclick="addToCart('Bayam', 8000)">Tambah ke Keranjang</button>
         </li>
         <li>
-            <img src="images/kentang.jpg" alt="Kentang">
-            <h2>Kentang</h2>
-            <p>Harga: Rp 12,000</p>
-            <button onclick="addToCart('Kentang', 12000)">Tambah ke Keranjang</button>
-        </li>
-        <li>
-            <img src="images/kol.jpg" alt="Kol">
+            <img src="kol.webp" alt="Kol">
             <h2>Kol</h2>
             <p>Harga: Rp 9,000</p>
             <button onclick="addToCart('Kol', 9000)">Tambah ke Keranjang</button>
         </li>
         <li>
-            <img src="images/brokoli.jpg" alt="Brokoli">
+            <img src="brokoli.jpg" alt="Brokoli">
             <h2>Brokoli</h2>
             <p>Harga: Rp 18,000</p>
             <button onclick="addToCart('Brokoli', 18000)">Tambah ke Keranjang</button>
         </li>
         <li>
-            <img src="images/cabai.jpg" alt="Cabai">
+            <img src="cabai.jpg" alt="Cabai">
             <h2>Cabai</h2>
             <p>Harga: Rp 20,000</p>
             <button onclick="addToCart('Cabai', 20000)">Tambah ke Keranjang</button>
         </li>
         <li>
-            <img src="images/terong.jpg" alt="Terong">
-            <h2>Terong</h2>
+            <img src="sawi.jpg" alt="Sawi">
+            <h2>Sawi</h2>
             <p>Harga: Rp 7,000</p>
-            <button onclick="addToCart('Terong', 7000)">Tambah ke Keranjang</button>
+            <button onclick="addToCart('Sawi', 7000)">Tambah ke Keranjang</button>
         </li>
         <li>
-            <img src="images/timun.jpg" alt="Timun">
-            <h2>Timun</h2>
+            <img src="selada.jpg" alt="Selada">
+            <h2>Selada</h2>
+            <p>Harga: Rp 10,000</p>
+            <button onclick="addToCart('Selada', 10000)">Tambah ke Keranjang</button>
+        </li>
+        <li>
+            <img src="buncis.jpg" alt="Buncis">
+            <h2>Buncis</h2>
+            <p>Harga: Rp 12,000</p>
+            <button onclick="addToCart('Buncis', 12000)">Tambah ke Keranjang</button>
+        </li>
+        <li>
+            <img src="kangkung.jpg" alt="Kangkung">
+            <h2>Kangkung</h2>
             <p>Harga: Rp 5,000</p>
-            <button onclick="addToCart('Timun', 5000)">Tambah ke Keranjang</button>
+            <button onclick="addToCart('Kangkung', 5000)">Tambah ke Keranjang</button>
         </li>
         <li>
-            <img src="images/jagung.jpg" alt="Jagung">
-            <h2>Jagung</h2>
-            <p>Harga: Rp 8,500</p>
-            <button onclick="addToCart('Jagung', 8500)">Tambah ke Keranjang</button>
+            <img src="daunb.jpg" alt="Daun Bawang">
+            <h2>Daun Bawang</h2>
+            <p>Harga: Rp 15,000</p>
+            <button onclick="addToCart('Daun Bawang', 15000)">Tambah ke Keranjang</button>
+        </li>
+        <li>
+            <img src="tauge.jpg" alt="Tauge">
+            <h2>Tauge</h2>
+            <p>Harga: Rp 6,000</p>
+            <button onclick="addToCart('Tauge', 6000)">Tambah ke Keranjang</button>
+        </li>
+        <li>
+            <img src="okura.jpg" alt="Okra">
+            <h2>Okra</h2>
+            <p>Harga: Rp 13,000</p>
+            <button onclick="addToCart('Okra', 13000)">Tambah ke Keranjang</button>
+        </li>
+        <li>
+            <img src="pakcoy.jpg" alt="Pakcoy">
+            <h2>Pakcoy</h2>
+            <p>Harga: Rp 11,000</p>
+            <button onclick="addToCart('Pakcoy', 11000)">Tambah ke Keranjang</button>
         </li>
     </ul>
+    
     <footer>
         <a href="checkout.html">Lihat Keranjang</a>
     </footer>
